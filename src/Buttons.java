@@ -47,7 +47,7 @@ public class Buttons {
         panel.add(fifteen);
 
         frame.pack();
-        frame.setSize(600, 400);
+        frame.setSize(600, 600);
         frame.setLocationRelativeTo(null);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setVisible(true);
