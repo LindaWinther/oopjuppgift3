@@ -1,6 +1,6 @@
 import javax.swing.*;
 
-public class main extends JFrame {
+public class Main extends JFrame {
     /*
     1. bygga GUI
     2. Metod för knappar, söker runt sig sen flyttar
