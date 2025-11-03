@@ -1,4 +1,5 @@
 import javax.swing.*;
+import java.awt.*;
 
 public class Buttons {
 
@@ -18,6 +19,12 @@ public class Buttons {
     JButton twelve = new JButton("12");
     JButton thirteen = new JButton("13");
     JButton fourteen = new JButton("14");
-    JButton fiveteen = new JButton("15");
+    JButton fifteen  = new JButton("15");
 
+
+    GridLayout grid = new GridLayout(4,4);
+
+    public Buttons() {
+
+    }
 }
