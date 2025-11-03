@@ -1,3 +1,14 @@
 public class Board {
-    //test
+    public void isSolved (){
+    }
+
+    public void RandomiseBoard(){
+    }
+
+    public void createBoard(){
+    }
+
+    public  void createButtons(){
+    }
+
 }
