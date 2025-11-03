@@ -3,7 +3,8 @@ import java.awt.*;
 
 public class Buttons {
 
-//  Linda
+    JFrame frame = new JFrame("Game of fifteen");
+    JPanel panel = new JPanel();
 
     JButton one = new JButton("1");
     JButton two = new JButton("2");
@@ -26,5 +27,29 @@ public class Buttons {
 
     public Buttons() {
 
+        frame.add(panel);
+        panel.setLayout(grid);
+
+        panel.add(one);
+        panel.add(two);
+        panel.add(three);
+        panel.add(four);
+        panel.add(five);
+        panel.add(six);
+        panel.add(seven);
+        panel.add(eight);
+        panel.add(nine);
+        panel.add(ten);
+        panel.add(eleven);
+        panel.add(twelve);
+        panel.add(thirteen);
+        panel.add(fourteen);
+        panel.add(fifteen);
+
+        frame.pack();
+        frame.setSize(600, 600);
+        frame.setLocationRelativeTo(null);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setVisible(true);
     }
 }
