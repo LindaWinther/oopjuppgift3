@@ -2,6 +2,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Collections;
 import java.util.List;
 import java.util.ArrayList;
 
@@ -81,5 +82,6 @@ public class Board extends JFrame {
             numbers.add(i);
         }
         numbers.add(0);
+        Collections.shuffle(numbers);
     }
 }
