@@ -5,6 +5,7 @@ import java.awt.event.ActionListener;
 import java.util.Collections;
 import java.util.List;
 import java.util.ArrayList;
+import java.util.Random;
 
 public class Board extends JFrame {
     private int gridSize = 4;
@@ -38,6 +39,7 @@ public class Board extends JFrame {
         }
         zeroWidth = gridSize -1;
         zeroHight = gridSize -1;
+        RandomiseBoard();
         updateBoard();
         setVisible(true); // flyttad sist så allt kommer med
     }
@@ -83,5 +85,17 @@ public class Board extends JFrame {
         }
         numbers.add(0);
         Collections.shuffle(numbers);
+
+        int index = 0;
+        for (int i = 0; i < gridSize; i++) {
+            for (int j = 0; j < gridSize; j++) {
+                int number = numbers.get(index++);
+                buttons[i][j].setText(String.valueOf(number));
+                if (number == 0) {
+                    zeroWidth = i;
+                    zeroHight = j;
+                }
+            }
+        }
     }
 }
