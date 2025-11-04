@@ -7,12 +7,11 @@ import java.util.List;
 import java.util.ArrayList;
 
 public class Board extends JFrame {
-    private int gridSize = 4;
-    public Button[][] buttons = new Button[gridSize][gridSize]; // Här
-    private final int [][] tiles = new int [gridSize][gridSize]; // ta bort ovan?
-    // Vart nollan är
-    int zeroWidth = 3;
-    int zeroHight = 3;
+    private final int gridSize = 4;
+    public Button[][] buttons = new Button[gridSize][gridSize];
+    private final int [][] tiles = new int [gridSize][gridSize];
+    int zeroWidth;
+    int zeroHight;//Oklart om deet behövdes 3or här. Funkar fint utan.
 
     public Board() {
         setTitle("15 puzzle");
@@ -38,14 +37,25 @@ public class Board extends JFrame {
         }
         zeroWidth = gridSize -1;
         zeroHight = gridSize -1;
-        RandomiseBoard();
+        RandomiseBoard(); // kommentera ut vid redovisning
         updateBoard();
-        setVisible(true); // flyttad sist så allt kommer med
+        setVisible(true);
     }
 
-    public void isSolved (){
+    public boolean isSolved (){
+        int count = 1;
+        for (int i = 0; i < gridSize; i++) {
+            for (int j = 0; j < gridSize; j++) {
+                if (i == gridSize - 1 && j == gridSize - 1) {
+                    return tiles[i][j] == 0;
+                }
+                if (tiles[i][j] != count++){
+                    return false;
+                }
+            }
+        }
+        return true;
     }
-
 
     public void moveButton (int width, int hight) {
 
@@ -55,14 +65,17 @@ public class Board extends JFrame {
 
         if (!adjacent) return;
 
-        int tempoary = tiles[width][hight];
+        int temporary = tiles[width][hight];
         tiles[width][hight] = tiles [zeroWidth][zeroHight];
-        tiles[zeroWidth][zeroHight] = tempoary;
+        tiles[zeroWidth][zeroHight] = temporary;
 
         zeroWidth = width;
         zeroHight = hight;
 
         updateBoard();
+        if (isSolved ()) {
+            JOptionPane.showMessageDialog(null, "Solved!");
+        }
     }
 
     public void updateBoard() {
@@ -75,7 +88,6 @@ public class Board extends JFrame {
         }
         repaint();
     }
-
 
     public void RandomiseBoard(){
         List<Integer> numbers = new ArrayList<>();
