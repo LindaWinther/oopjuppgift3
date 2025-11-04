@@ -5,7 +5,6 @@ import java.awt.event.ActionListener;
 
 public class Board extends JFrame {
     private int gridSize = 4;
-    //private Button[][] buttons;
     public Button[][] buttons = new Button[gridSize][gridSize]; // Här
     private final int [][] tiles = new int [gridSize][gridSize]; // ta bort ovan?
     // Vart nollan är
@@ -18,7 +17,6 @@ public class Board extends JFrame {
         setLocationRelativeTo(null);
         setSize(400,400);
         setLayout(new GridLayout(gridSize, gridSize));
-     //   buttons = new Button[gridSize][gridSize];  // Jag lånar ut den här till högst upp
         int number = 1;
         for (int i = 0; i < gridSize; i++) {
             for (int j = 0; j < gridSize; j++) {
@@ -26,8 +24,6 @@ public class Board extends JFrame {
                 buttons[i][j] = new Button(tiles[i][j]);
                 final int w = i, h = j;
 
-              //  int w = i;
-               // int h = j;
 
                 buttons[i][j].addActionListener(new ActionListener() {
                     @Override
@@ -48,7 +44,6 @@ public class Board extends JFrame {
     }
 
 
-
     public void moveButton (int width, int hight) {
 
         boolean adjacent =
@@ -65,20 +60,8 @@ public class Board extends JFrame {
         zeroHight = hight;
 
         updateBoard();
-        /*
-        if (adjacent) {
-            String saveNumber = buttons[with][hight].getText();
-            buttons[with][hight].setText("");  // byt knapp istället för namn
-            buttons[zeroWidth][zeroHight].setText(saveNumber);
-
-            zeroWidth = with;
-            zeroHight = hight;
-
-            updateBoard();
-        }*/
     }
 
-   // int [][] tiles = new int [gridSize][gridSize];
     public void updateBoard() {
         for (int i = 0; i < gridSize; i++) {
             for (int j = 0; j < gridSize; j++) {
