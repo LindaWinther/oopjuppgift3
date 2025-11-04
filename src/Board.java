@@ -24,7 +24,6 @@ public class Board extends JFrame {
                 buttons[i][j] = new Button(tiles[i][j]);
                 final int w = i, h = j;
 
-
                 buttons[i][j].addActionListener(new ActionListener() {
                     @Override
                     public void actionPerformed(ActionEvent e) {
