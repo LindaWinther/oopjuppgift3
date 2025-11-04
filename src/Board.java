@@ -2,6 +2,8 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.List;
+import java.util.ArrayList;
 
 public class Board extends JFrame {
     private int gridSize = 4;
@@ -74,5 +76,10 @@ public class Board extends JFrame {
 
 
     public void RandomiseBoard(){
+        List<Integer> numbers = new ArrayList<>();
+        for (int i = 0; i < gridSize * gridSize; i++) {
+            numbers.add(i);
+        }
+        numbers.add(0);
     }
 }
