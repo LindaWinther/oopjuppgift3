@@ -29,6 +29,10 @@ public class Board extends JFrame {
     public void isSolved (){
     }
 
+    public void moveButton () {
+
+    }
+
     public void RandomiseBoard(){
     }
 }
