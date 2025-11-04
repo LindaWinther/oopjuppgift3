@@ -2,6 +2,9 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Collections;
+import java.util.List;
+import java.util.ArrayList;
 
 public class Board extends JFrame {
     private int gridSize = 4;
@@ -35,6 +38,7 @@ public class Board extends JFrame {
         }
         zeroWidth = gridSize -1;
         zeroHight = gridSize -1;
+        RandomiseBoard();
         updateBoard();
         setVisible(true); // flyttad sist så allt kommer med
     }
@@ -74,5 +78,23 @@ public class Board extends JFrame {
 
 
     public void RandomiseBoard(){
+        List<Integer> numbers = new ArrayList<>();
+        for (int i = 0; i < gridSize * gridSize; i++) {
+            numbers.add(i);
+        }
+        Collections.shuffle(numbers);
+
+        int index = 0;
+        for (int i = 0; i < gridSize; i++) {
+            for (int j = 0; j < gridSize; j++) {
+                int number = numbers.get(index++);
+                tiles[i][j] = number;
+                buttons[i][j].setNumber(number);
+                if (number == 0) {
+                    zeroWidth = i;
+                    zeroHight = j;
+                }
+            }
+        }
     }
 }
