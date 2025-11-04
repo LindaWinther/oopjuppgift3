@@ -82,7 +82,6 @@ public class Board extends JFrame {
         for (int i = 0; i < gridSize * gridSize; i++) {
             numbers.add(i);
         }
-        numbers.add(0);
         Collections.shuffle(numbers);
 
         int index = 0;
