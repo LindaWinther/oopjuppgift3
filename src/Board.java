@@ -37,7 +37,7 @@ public class Board extends JFrame {
         }
         zeroWidth = gridSize -1;
         zeroHight = gridSize -1;
-        RandomiseBoard(); // kommentera ut vid redovisning
+       // RandomiseBoard(); // kommentera ut vid redovisning
         updateBoard();
         setVisible(true);
     }

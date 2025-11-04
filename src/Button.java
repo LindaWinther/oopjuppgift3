@@ -19,4 +19,8 @@ public class Button extends JButton {
         } else
             setText(String.valueOf(number));
     }
+
+    public void newGame() {
+        Rand
+    }
 }
