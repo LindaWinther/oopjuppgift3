@@ -5,8 +5,9 @@ import java.awt.event.ActionListener;
 
 public class Board extends JFrame {
     private int gridSize = 4;
-    public Button[][] buttons = new Button[gridSize][gridSize]; // Här
-    private final int [][] tiles = new int [gridSize][gridSize]; // ta bort ovan?
+    public Button[][] buttons = new Button[gridSize][gridSize];
+    private final int [][] tiles = new int [gridSize][gridSize];
+
     // Vart nollan är
     int zeroWidth = 3;
     int zeroHight = 3;
@@ -36,7 +37,7 @@ public class Board extends JFrame {
         zeroWidth = gridSize -1;
         zeroHight = gridSize -1;
         updateBoard();
-        setVisible(true); // flyttad sist så allt kommer med
+        setVisible(true);
     }
 
     public void isSolved (){
