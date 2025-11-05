@@ -17,6 +17,7 @@ public class Board extends JPanel {
         setMinimumSize(new Dimension(400,400));
         setLayout(new GridLayout(gridSize, gridSize));
         int number = 1;
+
         for (int i = 0; i < gridSize; i++) {
             for (int j = 0; j < gridSize; j++) {
                 tiles[i][j] = (number < gridSize * gridSize) ? number++ : 0;
@@ -36,6 +37,27 @@ public class Board extends JPanel {
         zeroHight = gridSize -1;
         updateBoard();
         setVisible(true);
+    }
+
+    public void RandomiseBoard(){
+        List<Integer> numbers = new ArrayList<>();
+        for (int i = 0; i < gridSize * gridSize; i++) {
+            numbers.add(i);
+        }
+        Collections.shuffle(numbers);
+
+        int index = 0;
+        for (int i = 0; i < gridSize; i++) {
+            for (int j = 0; j < gridSize; j++) {
+                int number = numbers.get(index++);
+                tiles[i][j] = number;
+                buttons[i][j].setNumber(number);
+                if (number == 0) {
+                    zeroWidth = i;
+                    zeroHight = j;
+                }
+            }
+        }
     }
 
     public boolean isSolved (){
@@ -84,27 +106,6 @@ public class Board extends JPanel {
             }
         }
         repaint();
-    }
-
-    public void RandomiseBoard(){
-        List<Integer> numbers = new ArrayList<>();
-        for (int i = 0; i < gridSize * gridSize; i++) {
-            numbers.add(i);
-        }
-        Collections.shuffle(numbers);
-
-        int index = 0;
-        for (int i = 0; i < gridSize; i++) {
-            for (int j = 0; j < gridSize; j++) {
-                int number = numbers.get(index++);
-                tiles[i][j] = number;
-                buttons[i][j].setNumber(number);
-                if (number == 0) {
-                    zeroWidth = i;
-                    zeroHight = j;
-                }
-            }
-        }
     }
 
     public void zeroToSixteen(){
