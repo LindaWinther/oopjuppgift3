@@ -34,7 +34,6 @@ public class Board extends JPanel {
         }
         zeroWidth = gridSize -1;
         zeroHight = gridSize -1;
-       // RandomiseBoard(); // kommentera ut vid redovisning
         updateBoard();
         setVisible(true);
     }
