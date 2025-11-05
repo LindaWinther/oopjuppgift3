@@ -8,6 +8,6 @@ public class Main extends JFrame {
     4. Metod för att Shuffla
      */
     public static void main(String[] args) {
-        Board board = new Board();
+        GameWindow window = new GameWindow();
     }
 }

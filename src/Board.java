@@ -6,7 +6,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.ArrayList;
 
-public class Board extends JFrame {
+public class Board extends JPanel {
     private final int gridSize = 4;
     public Button[][] buttons = new Button[gridSize][gridSize];
     private final int [][] tiles = new int [gridSize][gridSize];
@@ -14,10 +14,7 @@ public class Board extends JFrame {
     int zeroHight;//Oklart om deet behövdes 3or här. Funkar fint utan.
 
     public Board() {
-        setTitle("15 puzzle");
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setLocationRelativeTo(null);
-        setSize(400,400);
+        setMinimumSize(new Dimension(400,400));
         setLayout(new GridLayout(gridSize, gridSize));
         int number = 1;
         for (int i = 0; i < gridSize; i++) {
