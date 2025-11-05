@@ -11,7 +11,7 @@ public class Board extends JPanel {
     public Button[][] buttons = new Button[gridSize][gridSize];
     private final int [][] tiles = new int [gridSize][gridSize];
     int zeroWidth;
-    int zeroHight;//Oklart om deet behövdes 3or här. Funkar fint utan.
+    int zeroHight;
 
     public Board() {
         setMinimumSize(new Dimension(400,400));
@@ -70,6 +70,7 @@ public class Board extends JPanel {
 
         updateBoard();
         if (isSolved ()) {
+            zeroToSixteen();
             JOptionPane.showMessageDialog(null, "Solved!");
         }
     }
@@ -103,6 +104,13 @@ public class Board extends JPanel {
                     zeroHight = j;
                 }
             }
+        }
+    }
+
+    public void zeroToSixteen(){
+        if (isSolved()){
+            tiles[gridSize-1][gridSize-1] = 16;
+            updateBoard();
         }
     }
 }
