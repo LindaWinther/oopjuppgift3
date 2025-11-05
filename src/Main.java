@@ -2,6 +2,6 @@ import javax.swing.*;
 
 public class Main extends JFrame {
     public static void main(String[] args) {
-        GameWindow window = new GameWindow();
+        new GameWindow();
     }
 }
