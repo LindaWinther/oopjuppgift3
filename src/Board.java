@@ -108,7 +108,7 @@ public class Board extends JPanel {
 
     public void zeroToSixteen(){
         if (isSolved()){
-            tiles[zeroWidth][zeroHight] = 16;
+            tiles[zeroWidth][zeroHight] = gridSize * gridSize;
             updateBoard();
         }
     }
