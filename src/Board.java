@@ -77,7 +77,7 @@ public class Board extends JPanel {
 
         boolean adjacent =
                 (Math.abs (width - zeroWidth) == 1 && (hight == zeroHight)) ||
-                (Math.abs(hight - zeroHight) == 1 && (width == zeroWidth));
+                (Math.abs (hight - zeroHight) == 1 && (width == zeroWidth));
 
         if (!adjacent) return;
 
@@ -91,7 +91,7 @@ public class Board extends JPanel {
         updateBoard();
         if (isSolved ()) {
             zeroToSixteen();
-            JOptionPane.showMessageDialog(null, "Solved!");
+            JOptionPane.showMessageDialog(null, "Grattis, du vann!");
         }
     }
 
