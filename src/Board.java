@@ -10,8 +10,8 @@ public class Board extends JPanel {
     private final int gridSize = 4;
     public Button[][] buttons = new Button[gridSize][gridSize];
     private final int [][] tiles = new int [gridSize][gridSize];
-    int zeroWidth;
-    int zeroHight;
+    int zeroWidth = gridSize -1;
+    int zeroHight = gridSize -1;
 
     public Board() {
         setMinimumSize(new Dimension(400,400));
@@ -33,8 +33,6 @@ public class Board extends JPanel {
                 add(buttons[i][j]);
             }
         }
-        zeroWidth = gridSize -1;
-        zeroHight = gridSize -1;
         updateBoard();
         setVisible(true);
     }
@@ -110,7 +108,7 @@ public class Board extends JPanel {
 
     public void zeroToSixteen(){
         if (isSolved()){
-            tiles[gridSize-1][gridSize-1] = 16;
+            tiles[zeroWidth][zeroHight] = 16;
             updateBoard();
         }
     }
